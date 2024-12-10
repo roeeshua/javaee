@@ -1,16 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-    <servlet>
-        <servlet-name>FirstTest</servlet-name>
-        <servlet-class>First_Test</servlet-class> <!--这里写你自己的类名哈-->
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>FirstTest</servlet-name>
-        <url-pattern>/tt</url-pattern>
-    </servlet-mapping>
+
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>LoginServlet</servlet-class>
@@ -27,5 +19,29 @@
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+
+    <!-- 配置Servlet -->
+    <servlet>
+        <servlet-name>JoinClassServlet</servlet-name>
+        <servlet-class>JoinClassServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>AuditJoinClassServlet</servlet-name>
+        <servlet-class>AuditJoinClassServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <!-- 配置Servlet映射 -->
+    <servlet-mapping>
+        <servlet-name>JoinClassServlet</servlet-name>
+        <url-pattern>/JoinClassServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>AuditJoinClassServlet</servlet-name>
+        <url-pattern>/AuditJoinClassServlet</url-pattern>
     </servlet-mapping>
 </web-app>

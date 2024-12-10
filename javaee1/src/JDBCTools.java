@@ -8,12 +8,12 @@ public class JDBCTools {
         String user = "root";
         String password = "175617";
         String url ="jdbc:mysql://localhost:3306/javaee2?useSSL=true&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai";
-        Class.forName("com.mysql.cj.jdbc.Driver");
+        java.lang.Class.forName("com.mysql.cj.jdbc.Driver");
         Connection conn = DriverManager.getConnection(url,user,password);
         return conn;
     }
 
-        public static void release(ResultSet res, Statement statement,Connection conn){
+    public static void release(ResultSet res, Statement statement,Connection conn){
         try{
             if (res !=null)
                 res.close();

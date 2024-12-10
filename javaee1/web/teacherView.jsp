@@ -97,14 +97,21 @@
         <div class="card">
             <h5>创建班级</h5>
             <p>创建新的班级信息，等待管理员审核后生效。</p>
-            <a href="create-class.jsp">创建班级</a>
+            <a href="teacher/create-class.jsp">创建班级</a>
         </div>
 
         <!-- 加入班级 -->
         <div class="card">
             <h5>加入班级</h5>
             <p>加入已生效的班级，需班级创建者审核通过。</p>
-            <a href="join-class.jsp">加入班级</a>
+            <a href="teacher/join-class.jsp">加入班级</a>
+        </div>
+
+        <!-- 审核加入班级的老师或家长 -->
+        <div class="card">
+            <h5>加入班级审核</h5>
+            <p>审核加入班级的老师或家长。</p>
+            <a href="teacher/audituser.jsp">加入班级审核</a>
         </div>
 
         <!-- 发布通知 -->

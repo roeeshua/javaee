@@ -1,3 +1,6 @@
+
+import java.util.List;
+
 public interface UserDao {
     void add_data(String username, String password,int usercode);
 

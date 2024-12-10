@@ -1,7 +1,8 @@
+
 import java.sql.*;
-
+import java.util.ArrayList;
+import java.util.List;
 public class UserDaoImpl implements UserDao {
-
     @Override
     public void add_data(String username, String password,int usercode){
         Connection conn = null;
@@ -69,7 +70,6 @@ public class UserDaoImpl implements UserDao {
         Connection conn=null;
         PreparedStatement preparedStatement=null;
         ResultSet res=null;
-        ResultSet res2=null;
         try {
             conn = JDBCTools.getConnection();  //Á¬½Ó
             String statement="";
@@ -91,6 +91,8 @@ public class UserDaoImpl implements UserDao {
                 if(usercode==2&&res.getInt("is_pass")==0)
                     return 0;
                 else if(usercode==2&&res.getInt("is_pass")==1)
+                    return 1;
+                else
                     return 1;
             } else {
                 return 2;
