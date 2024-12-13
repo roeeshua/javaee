@@ -21,27 +21,40 @@
         <url-pattern>/register</url-pattern>
     </servlet-mapping>
 
-    <!-- 配置Servlet -->
     <servlet>
-        <servlet-name>JoinClassServlet</servlet-name>
-        <servlet-class>JoinClassServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
+        <servlet-name>servlet.JoinClassServlet</servlet-name>
+        <servlet-class>servlet.JoinClassServlet</servlet-class>
     </servlet>
-
-    <servlet>
-        <servlet-name>AuditJoinClassServlet</servlet-name>
-        <servlet-class>AuditJoinClassServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-
-    <!-- 配置Servlet映射 -->
     <servlet-mapping>
-        <servlet-name>JoinClassServlet</servlet-name>
-        <url-pattern>/JoinClassServlet</url-pattern>
+        <servlet-name>servlet.JoinClassServlet</servlet-name>
+        <url-pattern>/teacher/join-class</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>servlet.AuditUserServlet</servlet-name>
+        <servlet-class>servlet.AuditUserServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
-        <servlet-name>AuditJoinClassServlet</servlet-name>
-        <url-pattern>/AuditJoinClassServlet</url-pattern>
+        <servlet-name>servlet.AuditUserServlet</servlet-name>
+        <url-pattern>/teacher/audit-user</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>servlet.ClassNotifyServlet</servlet-name>
+        <servlet-class>servlet.ClassNotifyServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servlet.ClassNotifyServlet</servlet-name>
+        <url-pattern>/teacher/post-notice</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>servlet.delClassNotifyServlet</servlet-name>
+        <servlet-class>servlet.delClassNotifyServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servlet.delClassNotifyServlet</servlet-name>
+        <url-pattern>/teacher/delete-notice</url-pattern>
+    </servlet-mapping>
+
 </web-app>

@@ -125,7 +125,7 @@
         <div class="card">
             <h5>审核班级信息</h5>
             <p>查看并审核教师创建的班级。</p>
-            <a href="./teacher/review-classes.jsp">审核班级</a>
+            <a href="teacher/review-classes.jsp">审核班级</a>
         </div>
 
         <!-- 发布系统通知 -->

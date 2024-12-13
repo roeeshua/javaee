@@ -104,21 +104,28 @@
         <div class="card">
             <h5>加入班级</h5>
             <p>加入已生效的班级，需班级创建者审核通过。</p>
-            <a href="teacher/join-class.jsp">加入班级</a>
+            <a href="teacher/join-class">加入班级</a>
         </div>
 
         <!-- 审核加入班级的老师或家长 -->
         <div class="card">
             <h5>加入班级审核</h5>
             <p>审核加入班级的老师或家长。</p>
-            <a href="teacher/audituser.jsp">加入班级审核</a>
+            <a href="teacher/audit-user">加入班级审核</a>
         </div>
 
         <!-- 发布通知 -->
         <div class="card">
             <h5>发布通知</h5>
             <p>发布班级通知，通知不可修改但可以删除。</p>
-            <a href="post-notice.jsp">发布通知</a>
+            <a href="teacher/post-notice">发布通知</a>
+        </div>
+
+        <!-- 发布通知 -->
+        <div class="card">
+            <h5>删除通知</h5>
+            <p>删除班级通知</p>
+            <a href="teacher/delete-notice">删除通知</a>
         </div>
 
         <!-- 查询通知和消息 -->

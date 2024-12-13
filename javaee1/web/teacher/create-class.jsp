@@ -61,6 +61,16 @@
             flex-direction: column;
             gap: 10px;
         }
+        .return-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #e74c3c;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+        }
         .return-button:hover {
             background-color: #c0392b;
         }

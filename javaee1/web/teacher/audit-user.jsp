@@ -3,7 +3,7 @@
     response.setHeader("Pragma", "no-cache");
     response.setDateHeader("Expires", 0);
 %>
-<%@ page import="bean.ClassInfo" %>
+<%@ page import="bean.JoinRequest" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>加入班级</title>
+    <title>审核加入申请</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -72,42 +72,44 @@
 <body>
 <a href="../teacherView.jsp" class="return-button">返回</a>
 <div class="container">
-    <h2>加入班级</h2>
-        <table>
-            <thead>            <tr>
-                <th>班级名称</th>
-                <th>班级简介</th>
-                <th>操作</th>
-            </tr>
-            </thead>
-            <tbody>
-            <%
-                List<ClassInfo> availableClasses = (List<ClassInfo>) request.getAttribute("availableClasses");
-                if (availableClasses != null && !availableClasses.isEmpty()) {
-                    for (ClassInfo cls : availableClasses) {
-            %>
+    <h2>加入班级申请审核</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>申请人</th>
+            <th>班级名称</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <%
+            List<JoinRequest> joinRequests = (List<JoinRequest>) request.getAttribute("joinRequests");
+            if (joinRequests != null && !joinRequests.isEmpty()) {
+                for (JoinRequest req : joinRequests) {
+        %>
 
-            <tr>
-                <td><%= cls.getName() %></td>
-                <td><%= cls.getAbout() %></td>
-                <td>
-                    <form action="join-class" method="post">
-                    <button type="submit" name="classId" value="<%=cls.getId()%>">申请加入</button>
-                    </form>
-                </td>
-            </tr>
-            <%
-                }
-            } else {
-            %>
-            <tr>
-                <td colspan="3" style="text-align: center;">暂无可加入的班级</td>
-            </tr>
-            <%
-                }
-            %>
-            </tbody>
-        </table>
+        <tr>
+            <td><%= req.getTeacherUsername() %></td>
+            <td><%= req.getClassName() %></td>
+            <td>
+                <form action="audit-user" method="post">
+                    <button type="submit" name="action" value="approve_<%= req.getClassId() %>_<%= req.getTeacherId() %>">批准</button>
+                    <button type="submit" name="action" value="reject_<%= req.getClassId() %>_<%= req.getTeacherId() %>">拒绝</button>
+                </form>
+            </td>
+        </tr>
+        <%
+            }
+        } else {
+        %>
+        <tr>
+            <td colspan="3" style="text-align: center;">暂无申请待审核</td>
+        </tr>
+        <%
+            }
+        %>
+        </tbody>
+    </table>
 </div>
 </body>
 </html>
