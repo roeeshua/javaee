@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>发布通知</title>
+    <title>发布系统通知</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -55,50 +55,41 @@
 </head>
 <body>
 <div class="container">
-    <h2>发布通知</h2>
-    <h3>选择班级发送通知</h3>
-    <%
-        List<ClassInfo> createdClasses = (List<ClassInfo>) request.getAttribute("createdClasses");
-        if (createdClasses != null && !createdClasses.isEmpty()) {
-    %>
-    <table>
-        <thead>
-        <tr>
-            <th>班级id</th>
-            <th>班级名称</th>
-            <th>班级简介</th>
-        </tr>
-        </thead>
-        <tbody>
-        <%
-            for (ClassInfo cls : createdClasses) {
-        %>
-        <tr>
-            <td><%= cls.getId() %></td>
-            <td><%= cls.getName() %></td>
-            <td><%= cls.getAbout() %></td>
-        </tr>
-        <% } %>
-        </tbody>
-    </table>
-    <form action="post-notice" method="post">
-        <label for="classId">选择班级:</label>
-        <select id="classId" name="classId" required>
-            <%
-                for (ClassInfo cls : createdClasses) {
-            %>
-            <option value="<%= cls.getId() %>"><%= cls.getName() %></option>
-            <% } %>
-        </select>
+    <h2>发布系统通知</h2>
+    <form action="post-system-notice" method="post">
         <label for="content">通知内容:</label>
         <textarea id="content" name="content" required></textarea>
         <button type="submit">发布通知</button>
     </form>
-    <%
-    } else {
-    %>
-    <p>您还加入过班级。</p>
-    <% } %>
 </div>
 </body>
+
+<script>
+    function postNotice() {
+        var xhr = new XMLHttpRequest();
+        var content = document.getElementById("content").value;
+
+        xhr.open("POST", "post-system-notice", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                // 假设服务器返回的是一个简单的成功或失败消息
+                var response = xhr.responseText;
+                alert("通知已发布！");
+            }
+        };
+
+        xhr.send("content=" + encodeURIComponent(content));
+    }
+
+    window.onload = function() {
+        var button = document.querySelector("button[type='submit']");
+        button.onclick = function(event) {
+            event.preventDefault(); // 阻止表单的默认提交行为
+            postNotice();
+        };
+    };
+</script>
+
 </html>

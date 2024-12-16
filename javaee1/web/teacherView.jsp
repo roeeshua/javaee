@@ -107,11 +107,18 @@
             <a href="teacher/join-class">加入班级</a>
         </div>
 
-        <!-- 审核加入班级的老师或家长 -->
+        <!-- 审核加入班级的老师 -->
         <div class="card">
-            <h5>加入班级审核</h5>
-            <p>审核加入班级的老师或家长。</p>
-            <a href="teacher/audit-user">加入班级审核</a>
+            <h5>老师加入班级审核</h5>
+            <p>审核加入班级的老师。</p>
+            <a href="teacher/audit-user">老师加入班级审核</a>
+        </div>
+
+        <!-- 审核加入班级的家长 -->
+        <div class="card">
+            <h5>家长加入班级审核</h5>
+            <p>审核加入班级的家长。</p>
+            <a href="teacher/audit-parent">家长加入班级审核</a>
         </div>
 
         <!-- 发布通知 -->
@@ -128,18 +135,32 @@
             <a href="teacher/delete-notice">删除通知</a>
         </div>
 
-        <!-- 查询通知和消息 -->
+        <!-- 查看系统通知 -->
         <div class="card">
-            <h5>查询通知和消息</h5>
-            <p>多条件查询班级通知和站内信息。</p>
-            <a href="search-messages.jsp">查询信息</a>
+            <h5>查看系统通知</h5>
+            <p>查看管理员发布的系统通知</p>
+            <a href="teacher/del-system-notice">查看系统通知</a><!-- 通过管理员的删除通知的功能的doget进行一些改写得到 -->
         </div>
 
-        <!-- 站内沟通 -->
+        <!-- 查看或查询班级通知 -->
         <div class="card">
-            <h5>站内沟通</h5>
-            <p>与班级中的老师和家长通过站内消息沟通。</p>
-            <a href="send-message.jsp">站内沟通</a>
+            <h5>查看或查询班级通知</h5>
+            <p>查看老师发布的班级通知，可以进行多条件查询</p>
+            <a href="parent/watch-class-notice">查看或查询班级通知</a>
+        </div>
+
+        <!-- 与家长沟通 -->
+        <div class="card">
+            <h5>与家长沟通</h5>
+            <p>通过站内消息与班级家长进行沟通交流。</p>
+            <a href="teacher/sendtoparent">与家长沟通</a>
+        </div>
+
+        <!-- 查看或查询同班家长消息 -->
+        <div class="card">
+            <h5>查看或查询同班家长消息</h5>
+            <p>查看同班家长消息，可以进行多条件查询</p>
+            <a href="teacher/viewmessages">查看或查询同班家长消息</a>
         </div>
     </div>
 </div>

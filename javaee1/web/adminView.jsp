@@ -132,7 +132,14 @@
         <div class="card">
             <h5>发布系统通知</h5>
             <p>发布重要通知，通知将对所有用户可见。</p>
-            <a href="post-notice.jsp">发布通知</a>
+            <a href="teacher/post-system-notice">发布通知</a>
+        </div>
+
+        <!-- 删除系统通知 -->
+        <div class="card">
+            <h5>删除系统通知</h5>
+            <p>可以选择对应的系统通知进行删除</p>
+            <a href="teacher/del-system-notice">删除通知</a>
         </div>
     </div>
 </div>

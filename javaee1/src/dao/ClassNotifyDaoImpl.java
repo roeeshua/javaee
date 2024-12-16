@@ -18,7 +18,7 @@ public class ClassNotifyDaoImpl implements ClassNotifyDao {
 
         try {
             conn = JDBCTools.getConnection();
-            String statement = "SELECT id, name, about FROM classtable WHERE creator = ?";
+            String statement = "SELECT id, name, about FROM classtable WHERE id=any(SELECT class_id FROM teacher_class WHERE teacher_id =(SELECT id FROM teachertable WHERE username = ?)) AND is_pass = 1";
             preparedStatement = conn.prepareStatement(statement);
             preparedStatement.setString(1, creator);
             res = preparedStatement.executeQuery();

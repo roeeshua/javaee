@@ -22,7 +22,7 @@ public class delClassNotifyServlet extends HttpServlet {
         String username = (String) request.getSession().getAttribute("username");
 
         if (username == null) {
-            response.sendRedirect("../index.jsp");
+            response.sendRedirect("index.jsp");
             return;
         }
 

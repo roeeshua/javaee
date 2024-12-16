@@ -22,6 +22,7 @@ public class LoginServlet extends HttpServlet {
             // 保存用户名到 session
             HttpSession session = request.getSession();
             session.setAttribute("username", username);
+            session.setAttribute("usercode", usercode);
 
             // 根据角色跳转到不同页面
             if (usercode == 2) {

@@ -72,7 +72,7 @@
 <body>
 <a href="../teacherView.jsp" class="return-button">返回</a>
 <div class="container">
-    <h2>老师加入班级申请审核</h2>
+    <h2>家长加入班级申请审核</h2>
     <table>
         <thead>
         <tr>
@@ -92,7 +92,7 @@
             <td><%= req.getUsername() %></td>
             <td><%= req.getClassName() %></td>
             <td>
-                <form action="audit-user" method="post">
+                <form action="audit-parent" method="post">
                     <button type="submit" name="action" value="approve_<%= req.getClassId() %>_<%= req.getId() %>">批准</button>
                     <button type="submit" name="action" value="reject_<%= req.getClassId() %>_<%= req.getId() %>">拒绝</button>
                 </form>

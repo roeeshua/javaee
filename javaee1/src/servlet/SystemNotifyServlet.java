@@ -1,8 +1,7 @@
 package servlet;
-
 import bean.ClassInfo;
-import dao.ClassNotifyDao;
-import dao.ClassNotifyDaoImpl;
+import dao.SystemNotifyDao;
+import dao.SystemNotifyDaoImpl;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -13,31 +12,19 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet("/teacher/post-notice")
-public class ClassNotifyServlet extends HttpServlet {
+public class SystemNotifyServlet extends HttpServlet {
 
-    private ClassNotifyDao classNotifyDao = new ClassNotifyDaoImpl();
+    private SystemNotifyDao systemNotifyDao = new SystemNotifyDaoImpl();
 
-    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username = (String) request.getSession().getAttribute("username");
-
-        if (username == null) {
-            response.sendRedirect("index.jsp");
-            return;
-        }
-
-        List<ClassInfo> createdClasses = classNotifyDao.getCreatedClasses(username);
-        request.setAttribute("createdClasses", createdClasses);
-        request.getRequestDispatcher("/teacher/post-notice.jsp").forward(request, response);
+        response.sendRedirect("post-system-notice.jsp");
     }
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String sender = (String) request.getSession().getAttribute("username");
-        int classId = Integer.parseInt(request.getParameter("classId"));
         String content = request.getParameter("content");
 
-        boolean success = classNotifyDao.sendNotification(classId, sender, content);
+        boolean success = systemNotifyDao.sendNotification(sender, content);
         if (success) {
             response.sendRedirect("post-notice?status=success");
         } else {

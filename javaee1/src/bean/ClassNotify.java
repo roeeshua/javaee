@@ -6,11 +6,28 @@ public class ClassNotify {
     private String sender;
     private String content;
 
+    private String classname;
+
     public ClassNotify(int id, int classId, String sender, String content) {
         this.id = id;
         this.classId = classId;
         this.sender = sender;
         this.content = content;
+    }
+
+    public ClassNotify(int id, int classId, String classname, String sender, String content) {
+        this.id = id;
+        this.classId = classId;
+        this.classname =classname;
+        this.sender = sender;
+        this.content = content;
+    }
+    public void setClassname(String classname){
+        this.classname =classname;
+    }
+
+    public String getClassname(){
+        return this.classname;
     }
 
     public int getId() {

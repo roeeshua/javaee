@@ -57,4 +57,75 @@
         <url-pattern>/teacher/delete-notice</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>servlet.PJoinClassServlet</servlet-name>
+        <servlet-class>servlet.PJoinClassServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servlet.PJoinClassServlet</servlet-name>
+        <url-pattern>/parent/pjoin-class</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>servlet.PAuditUserServlet</servlet-name>
+        <servlet-class>servlet.PAuditUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servlet.PAuditUserServlet</servlet-name>
+        <url-pattern>/teacher/audit-parent</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>servlet.SystemNotifyServlet</servlet-name>
+        <servlet-class>servlet.SystemNotifyServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servlet.SystemNotifyServlet</servlet-name>
+        <url-pattern>/teacher/post-system-notice</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>servlet.delSystemNotifyServlet</servlet-name>
+        <servlet-class>servlet.delSystemNotifyServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servlet.delSystemNotifyServlet</servlet-name>
+        <url-pattern>/teacher/del-system-notice</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>servlet.WatchClassNotifyServlet</servlet-name>
+        <servlet-class>servlet.WatchClassNotifyServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servlet.WatchClassNotifyServlet</servlet-name>
+        <url-pattern>/parent/watch-class-notice</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>servlet.SendToTeacherServlet</servlet-name>
+        <servlet-class>servlet.SendToTeacherServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servlet.SendToTeacherServlet</servlet-name>
+        <url-pattern>/parent/sendtoteacher</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>servlet.SendToParentServlet</servlet-name>
+        <servlet-class>servlet.SendToParentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servlet.SendToParentServlet</servlet-name>
+        <url-pattern>/teacher/sendtoparent</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>servlet.ReceiveFromPOTServlet</servlet-name>
+        <servlet-class>servlet.ReceiveFromPOTServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servlet.ReceiveFromPOTServlet</servlet-name>
+        <url-pattern>/teacher/viewmessages</url-pattern>
+    </servlet-mapping>
 </web-app>

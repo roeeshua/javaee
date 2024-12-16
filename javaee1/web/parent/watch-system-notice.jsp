@@ -1,4 +1,4 @@
-<%@ page import="bean.ClassInfo" %>
+<%@ page import="bean.SystemNotify" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>发布通知</title>
+    <title>系统通知</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -36,12 +36,8 @@
             border: 1px solid #ddd;
             text-align: left;
         }
-        textarea {
-            width: 100%;
-            height: 100px;
-        }
         button {
-            background-color: #3498db;
+            background-color: #e74c3c;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -49,55 +45,55 @@
             cursor: pointer;
         }
         button:hover {
-            background-color: #2980b9;
+            background-color: #c0392b;
+        }
+        .return-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #e74c3c;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .return-button:hover {
+            background-color: #c0392b;
         }
     </style>
 </head>
 <body>
+<a href="../teacherView.jsp" class="return-button">返回</a>
 <div class="container">
-    <h2>发布通知</h2>
-    <h3>选择班级发送通知</h3>
+    <h2>系统通知</h2>
     <%
-        List<ClassInfo> createdClasses = (List<ClassInfo>) request.getAttribute("createdClasses");
-        if (createdClasses != null && !createdClasses.isEmpty()) {
+        List<SystemNotify> notifications = (List<SystemNotify>) request.getAttribute("notifications");
+        if (notifications != null && !notifications.isEmpty()) {
     %>
     <table>
         <thead>
         <tr>
-            <th>班级id</th>
-            <th>班级名称</th>
-            <th>班级简介</th>
+            <th>通知ID</th>
+            <th>通知发送者</th>
+            <th>通知内容</th>
         </tr>
         </thead>
         <tbody>
         <%
-            for (ClassInfo cls : createdClasses) {
+            for (SystemNotify notification : notifications) {
         %>
         <tr>
-            <td><%= cls.getId() %></td>
-            <td><%= cls.getName() %></td>
-            <td><%= cls.getAbout() %></td>
+            <td><%= notification.getId() %></td>
+            <td><%= notification.getSender() %></td>
+            <td><%= notification.getContent() %></td>
         </tr>
         <% } %>
         </tbody>
     </table>
-    <form action="post-notice" method="post">
-        <label for="classId">选择班级:</label>
-        <select id="classId" name="classId" required>
-            <%
-                for (ClassInfo cls : createdClasses) {
-            %>
-            <option value="<%= cls.getId() %>"><%= cls.getName() %></option>
-            <% } %>
-        </select>
-        <label for="content">通知内容:</label>
-        <textarea id="content" name="content" required></textarea>
-        <button type="submit">发布通知</button>
-    </form>
     <%
     } else {
     %>
-    <p>您还加入过班级。</p>
+    <p>当前没有系统通知</p>
     <% } %>
 </div>
 </body>
