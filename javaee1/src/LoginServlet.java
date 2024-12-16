@@ -1,5 +1,4 @@
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 import java.io.IOException;
 public class LoginServlet extends HttpServlet {

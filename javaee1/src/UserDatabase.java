@@ -1,7 +1,7 @@
 public class UserDatabase {
     public static boolean register(User user) {
         UserDao userDao = new UserDaoImpl();
-        if (userDao.is_exist(user.getUsername(),user.getUsercode())) {
+        if (userDao.is_exist(user.getUsername())) {
             return false; // 用户名已存在
         }
         userDao.add_data(user.getUsername(), user.getPassword(),user.getUsercode());

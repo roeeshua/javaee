@@ -1,14 +1,14 @@
 package bean;
 
 public class JoinRequest {
-    private int class_id; // 申请ID
+    private int class_id; // 班级id
 
-    private int id; // 申请ID
+    private int id; // 申请人id
     private String Username; // 申请人的用户名
     private String className; // 班级名称
 
     // 构造方法
-    public JoinRequest(int class_id,int id, String Username, String className) {
+    public JoinRequest(int class_id, int id, String Username, String className) {
         this.class_id = class_id;
         this.id = id;
         this.Username = Username;
@@ -18,6 +18,7 @@ public class JoinRequest {
     public int getClassId() {
         return class_id;
     }
+
     public int getId() {
         return id;
     }
@@ -43,12 +44,4 @@ public class JoinRequest {
         this.className = className;
     }
 
-//    @Override
-//    public String toString() {
-//        return "JoinRequest{" +
-//                "id=" + id +
-//                ", teacherUsername='" + teacherUsername + '\'' +
-//                ", className='" + className + '\'' +
-//                '}';
-//    }
 }

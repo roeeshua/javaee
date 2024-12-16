@@ -6,5 +6,7 @@ public interface UserDao {
 
     boolean is_exist(String username,int usercode);
 
+    boolean is_exist(String username);
+
     int login(String username, String password,int usercode);
 }

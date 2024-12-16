@@ -108,7 +108,7 @@
     <!-- 登录成功信息 -->
     <div class="success-container">
         <div class="success-header">
-            <h2>欢迎, 系统管理员 ${user.username} 登录成功!</h2>
+            <h2>欢迎, 系统管理员${sessionScope.username} 登录成功!</h2>
         </div>
         <a href="index.jsp" class="logout-button">退出登录</a>
     </div>

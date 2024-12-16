@@ -18,7 +18,7 @@ public class RegisterServlet extends HttpServlet {
             response.getWriter().write("无效的角色选择");
             return;
         }
-        UserService userService = new UserServiceImpl();
+        UserDao userService = new UserDaoImpl();
         if (UserDatabase.register(new User(username, password,usercode))) {
             response.sendRedirect("index.jsp");
         } else {

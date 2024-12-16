@@ -103,7 +103,7 @@
     <!-- 登录成功信息 -->
     <div class="success-container">
         <div class="success-header">
-            <h2>欢迎, 学生家长${user.username} 登录成功!</h2>
+            <h2>欢迎, 学生家长${sessionScope.username} 登录成功!</h2>
         </div>
         <a href="index.jsp" class="logout-button">退出登录</a>
     </div>
@@ -114,13 +114,6 @@
             <h5>申请加入班级</h5>
             <p>申请加入班级，等待班级创建者审核通过后生效。</p>
             <a href="parent/pjoin-class">申请加入班级</a>
-        </div>
-
-        <!-- 查看班级通知 -->
-        <div class="card">
-            <h5>查看班级通知</h5>
-            <p>查看您已加入班级的所有通知信息。</p>
-            <a href="parent/watch-class-notice">查看通知</a>
         </div>
 
         <!-- 查看系统通知 -->

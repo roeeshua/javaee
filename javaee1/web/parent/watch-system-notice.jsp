@@ -47,23 +47,9 @@
         button:hover {
             background-color: #c0392b;
         }
-        .return-button {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: #e74c3c;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-        .return-button:hover {
-            background-color: #c0392b;
-        }
     </style>
 </head>
 <body>
-<a href="../teacherView.jsp" class="return-button">返回</a>
 <div class="container">
     <h2>系统通知</h2>
     <%
